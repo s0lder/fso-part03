@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../fso-submissions/part2/phonebook && npm run build && cd ../../../fso-part03 && cp -r ../fso-submissions/part2/phonebook/dist .",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "s0lder",
   "license": "MIT",
